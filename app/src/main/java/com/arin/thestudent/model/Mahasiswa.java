@@ -1,6 +1,6 @@
 package com.arin.thestudent.model;
 
-public class User {
+public class Mahasiswa {
     private String username;
     private String fullname;
     private String nim;
@@ -11,7 +11,7 @@ public class User {
     private String phone;
     private String password;
 
-    public User(String username, String fullname, String nim, String date, String gender, String address, String email, String phone, String password) {
+    public Mahasiswa(String username, String fullname, String nim, String date, String gender, String address, String email, String phone, String password) {
         this.username = username;
         this.fullname = fullname;
         this.nim = nim;
@@ -21,6 +21,10 @@ public class User {
         this.email = email;
         this.phone = phone;
         this.password = password;
+    }
+
+    public Mahasiswa() {
+
     }
 
     public String getUsername() {

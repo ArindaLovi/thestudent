@@ -16,6 +16,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.arin.thestudent.model.Mahasiswa;
+
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +60,20 @@ public class MainActivity extends AppCompatActivity {
                         "Nama: " + fullname + ", Email: " + email + ", Tanggal Lahir: " + date+
                                 ", Jenis Kelamin: " + gender,
                         Toast.LENGTH_LONG).show();
+
+                Mahasiswa mahasiswa = new Mahasiswa();
+                mahasiswa.setUsername(username);
+                mahasiswa.setFullname(fullname);
+                mahasiswa.setNim(nim);
+                mahasiswa.setDate(date);
+                mahasiswa.setGender(gender);
+                mahasiswa.setAddress(address);
+                mahasiswa.setEmail(email);
+                mahasiswa.setPhone(phone);
+                mahasiswa.setPassword(password);
+
+                Toast.makeText(MainActivity.this, "Nama: " + mahasiswa.getFullname() + ", email: " + mahasiswa.getEmail(), Toast.LENGTH_LONG).show();
+
             }
         });
 
