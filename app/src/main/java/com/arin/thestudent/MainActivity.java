@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 String phone = edtPhone.getText().toString();
                 String password = edtPassword.getText().toString();
                 Toast.makeText(MainActivity.this,
-                        "Nama: " + fullname + ", Email: " + email + ", Tanggal Lahir: " + date,
+                        "Nama: " + fullname + ", Email: " + email + ", Tanggal Lahir: " + date+
+                                ", Jenis Kelamin: " + gender,
                         Toast.LENGTH_LONG).show();
             }
         });
