@@ -1,5 +1,6 @@
 package com.arin.thestudent;
 
+//,elakukan import library yang digunakan dalam aplikasi android
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    //mendeklarasikan elemen-elemen seperti EditText, Spinner, dan Button
     private EditText edtDate, edtUsername, edtFullname, edtNIM, edtAddress, edtEmail, edtPhone, edtPassword;
     private Spinner spinnerGender;
     private Button btnRegister;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi view
+        // Inisialisasi view dari form input
         edtUsername = findViewById(R.id.edt_username);
         edtFullname = findViewById(R.id.edt_fullname);
         edtNIM = findViewById(R.id.edt_nim);
@@ -42,11 +44,14 @@ public class MainActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edt_email);
         edtPhone = findViewById(R.id.edt_phone);
         edtPassword = findViewById(R.id.edt_password);
-        btnRegister = findViewById(R.id.btn_register); // Tambahkan inisialisasi untuk btnRegister
+        btnRegister = findViewById(R.id.btn_register); //Set action untuk tombol register (untuk mengambil input form dan tampilkan di Toast)
 
+        // Tambahkan inisialisasi untuk btnRegister
         btnRegister.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                //Mengambil input dari setiap field EditText dan Spinner
                 String username = edtUsername.getText().toString();
                 String fullname = edtFullname.getText().toString();
                 String nim = edtNIM.getText().toString();
@@ -56,11 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String phone = edtPhone.getText().toString();
                 String password = edtPassword.getText().toString();
+                //menampilkan input yang diambil dalam bentuk Toast
                 Toast.makeText(MainActivity.this,
                         "Nama: " + fullname + ", Email: " + email + ", Tanggal Lahir: " + date+
                                 ", Jenis Kelamin: " + gender,
                         Toast.LENGTH_LONG).show();
 
+                //membuat objek mahasiswa untuk menyimpan inpurt data
                 Mahasiswa mahasiswa = new Mahasiswa();
                 mahasiswa.setUsername(username);
                 mahasiswa.setFullname(fullname);
@@ -71,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 mahasiswa.setEmail(email);
                 mahasiswa.setPhone(phone);
                 mahasiswa.setPassword(password);
-
+                //menampilkan data mahasiswa dalam Toast
                 Toast.makeText(MainActivity.this, "Nama: " + mahasiswa.getFullname() + ", email: " + mahasiswa.getEmail(), Toast.LENGTH_LONG).show();
 
             }
