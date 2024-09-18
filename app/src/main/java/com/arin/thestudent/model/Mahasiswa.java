@@ -11,6 +11,7 @@ public class Mahasiswa {
     private String phone;
     private String password;
 
+
     public Mahasiswa(String username, String fullname, String nim, String date, String gender, String address, String email, String phone, String password) {
         this.username = username;
         this.fullname = fullname;

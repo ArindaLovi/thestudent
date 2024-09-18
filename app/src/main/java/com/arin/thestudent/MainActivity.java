@@ -24,7 +24,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     //mendeklarasikan elemen-elemen seperti EditText, Spinner, dan Button
-    private EditText edtDate, edtUsername, edtFullname, edtNIM, edtAddress, edtEmail, edtPhone, edtPassword;
+    private EditText edtDate, edtUsername, edtFullname, edtNIM, edtAddress, edtEmail, edtPhone, edtPassword, edit_konfirmasi;
     private Spinner spinnerGender;
     private Button btnRegister;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi view dari form input
+        // Inisialisasi view d ari form input
         edtUsername = findViewById(R.id.edt_username);
         edtFullname = findViewById(R.id.edt_fullname);
         edtNIM = findViewById(R.id.edt_nim);
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edt_email);
         edtPhone = findViewById(R.id.edt_phone);
         edtPassword = findViewById(R.id.edt_password);
+        edit_konfirmasi = findViewById(R.id.edit_konfirmasi);
         btnRegister = findViewById(R.id.btn_register); //Set action untuk tombol register (untuk mengambil input form dan tampilkan di Toast)
 
         // Tambahkan inisialisasi untuk btnRegister
@@ -61,10 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String phone = edtPhone.getText().toString();
                 String password = edtPassword.getText().toString();
+                String konfirmasi = edit_konfirmasi.getText().toString();
                 //menampilkan input yang diambil dalam bentuk Toast
                 Toast.makeText(MainActivity.this,
                         "Nama: " + fullname + ", Email: " + email + ", Tanggal Lahir: " + date+
-                                ", Jenis Kelamin: " + gender,
+                                ", Jenis Kelamin: " + gender + ", Konfirmasi Password: " + konfirmasi,
                         Toast.LENGTH_LONG).show();
 
                 //membuat objek mahasiswa untuk menyimpan inpurt data
